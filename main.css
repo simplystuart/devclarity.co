@@ -94,8 +94,10 @@ section {
 header {
   align-items: baseline;
   background-color: var(--background-color);
-  border: 1px solid var(--background-compliment-color);
+  border-bottom: 1px solid var(--background-compliment-color);
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: space-between;
   padding: 2rem 4rem;
   position: fixed;
@@ -114,11 +116,16 @@ header h1 {
 nav {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
 nav a.button {
   padding: 0 0.5rem;
+}
+
+#mobile-nav {
+  display: none;
 }
 
 /* hero styles */
@@ -147,6 +154,7 @@ nav a.button {
 
 #steps {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
 }
@@ -195,6 +203,7 @@ nav a.button {
 
 #tech-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -215,6 +224,7 @@ nav a.button {
 #services {
   display: block;
   background-color: var(--background-color);
+  padding: 8rem 4rem;
 }
 
 #services-container {
@@ -233,6 +243,7 @@ nav a.button {
 
 #service-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -250,6 +261,7 @@ nav a.button {
 
 #pricing {
   background-color: var(--highlight-color);
+  padding: 8rem 4rem;
 }
 
 #pricing h2,
@@ -259,6 +271,7 @@ nav a.button {
 
 #plans {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -296,12 +309,15 @@ nav a.button {
 footer {
   background-color: var(--background-compliment-color);
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: space-between;
   padding: 6rem 4rem 4rem;
 }
 
 #link-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -314,4 +330,96 @@ footer {
 .link-column a {
   color: var(--background-color);
   display: block;
+}
+
+@media (max-width: 50rem) {
+  /* generic styles */
+
+  section {
+    padding: 6rem 2rem;
+  }
+
+  /* header styles */
+
+  header {
+    gap: 1rem;
+    padding: 2rem;
+    position: static;
+  }
+
+  #mobile-nav i {
+    display: block;
+    transition: opacity 0.2s ease-in;
+  }
+
+  #mobile-nav-close,
+  header.mobile-nav-active #mobile-nav-open {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+  }
+
+  header.mobile-nav-active #mobile-nav-close {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+  }
+
+  nav {
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    transition: height 0.2s ease-in;
+    visibility: hidden;
+    width: 0;
+  }
+
+  header.mobile-nav-active nav {
+    height: auto;
+    opacity: 1;
+    position: static;
+    visibility: visible;
+    width: auto;
+  }
+
+  #mobile-nav {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  /* hero styles */
+
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  /* process styles */
+
+  .step {
+    width: auto;
+  }
+
+  /* work styles */
+
+  .work-card {
+    padding: 4rem 2rem;
+  }
+
+  /* tech styles */
+
+  /* services styles */
+
+  #services-container {
+    padding: 4rem 2rem;
+  }
+
+  /* pricing styles */
+
+  .plan {
+    padding: 4rem 2rem;
+  }
+
+  /* footer styles */
 }
