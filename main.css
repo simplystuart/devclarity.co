@@ -301,6 +301,8 @@ nav a.button {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  overflow: hidden;
+  position: relative;
   width: 35em;
 }
 
@@ -375,6 +377,7 @@ footer {
 
   header {
     gap: 1rem;
+    overflow: hidden;
     padding: 2rem;
     position: static;
   }
