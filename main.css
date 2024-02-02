@@ -102,6 +102,7 @@ header {
   padding: 2rem 4rem;
   position: fixed;
   width: 100%;
+  z-index: 100;
 }
 
 header h1,
